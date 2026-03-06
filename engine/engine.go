@@ -6,6 +6,7 @@ import (
 	"os"
 	"sync/atomic"
 	"syscall"
+	"time"
 	"unsafe"
 
 	"github.com/lixiasky-back/coroTracer/structure"
@@ -138,9 +139,22 @@ func (e *TracerEngine) hotHarvestLoop(conn net.Conn, wakeBuf []byte) {
 			continue
 		}
 
+		conn.SetReadDeadline(time.Now().Add(50 * time.Millisecond))
 		n, err := conn.Read(wakeBuf)
-		if err != nil || n == 0 {
-			atomic.StoreUint32(&e.header.TracerSleeping, 0)
+		if err != nil {
+			if netErr, ok := err.(net.Error); ok && netErr.Timeout() {
+				// Just wake up after timeout and continue the next round of cyclic scanning
+				continue
+			}
+			// Non-timeout error, indicating that Tracee has disconnected or is abnormal.
+			e.doScan()
+			e.writer.Flush()
+			return
+		}
+
+		if n == 0 {
+			e.doScan()
+			e.writer.Flush()
 			return
 		}
 

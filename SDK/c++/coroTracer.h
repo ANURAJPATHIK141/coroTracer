@@ -159,9 +159,14 @@ public:
 
         slot.seq.store(current_seq, std::memory_order_release);
 
-        if (g_header->tracer_sleeping.load(std::memory_order_relaxed) == 1) {
-            trigger_uds_wakeup();
-        }
+        // Fix potential lost wake-up
+        std::atomic_thread_fence(std::memory_order_seq_cst);
+        if (g_header->tracer_sleeping.load(std::memory_order_acquire) == 1) {
+                uint32_t expected = 1;
+                if (g_header->tracer_sleeping.compare_exchange_strong(expected, 0, std::memory_order_acq_rel)) {
+                    trigger_uds_wakeup();
+                }
+            }
     }
 };
 
